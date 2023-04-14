@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-hw1",
+  "version": "1.0.0",
+  "description": "hw1",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kyrylo2/nodejs-hw1.git"
+  },
+  "author": "Kyrylo Savchenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kyrylo2/nodejs-hw1/issues"
+  },
+  "homepage": "https://github.com/Kyrylo2/nodejs-hw1#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
