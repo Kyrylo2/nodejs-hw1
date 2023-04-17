@@ -12,23 +12,22 @@ program
 program.parse();
 
 const argv = program.opts();
-console.log('argv:', argv);
 
-const invokeAction = async ({ action, name, email, phone }) => {
+const invokeAction = async ({ action, id, name, email, phone }) => {
   console.log(action);
   switch (action) {
     case 'add':
-      const newContact = contacts.addContact({ name, email, phone });
-      return console.log(newContact);
+      const newContact = await contacts.addContact({ name, email, phone });
+      return console.table(newContact);
     case 'remove':
       const removedContact = await contacts.removeContact(id);
-      return console.log(removedContact);
+      return console.table(removedContact);
     case 'get':
       const contactById = await contacts.getContactById(id);
       return console.log(contactById);
     case 'list':
       const allContacts = await contacts.listContacts();
-      return console.log(allContacts);
+      return console.table(allContacts);
 
     default:
       console.warn('\x1B[31m Unknown action type!');

@@ -18,6 +18,7 @@ async function listContacts() {
 }
 
 async function getContactById(contactId) {
+  console.log('Get Id: ', contactId);
   const contacts = await readContacts();
   return contacts.find((contact) => contact.id === contactId) || null;
 }
@@ -37,7 +38,6 @@ async function removeContact(contactId) {
 }
 
 async function addContact(data) {
-  console.log('Add contact func:', data);
   const newContact = { id: nanoid(), ...data };
   const contacts = await readContacts();
   contacts.push(newContact);
